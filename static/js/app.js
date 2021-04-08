@@ -12,6 +12,7 @@ function buildCharts(UID) {
 
 // FUNCTION #2 of 4
 function populateDemoInfo(UID){
+    var demographicInfoBox = d3.select("#sample-metadata");
     console.log(UID)
 }
 
