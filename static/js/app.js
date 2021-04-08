@@ -11,13 +11,18 @@ function buildCharts(UID) {
 };
 
 // FUNCTION #2 of 4
-function populateDemoInfo(UID){
+function populateDemoInfo(UID) {
+
     var demographicInfoBox = d3.select("#sample-metadata");
-    console.log(UID)
+
+    d3.json("samples.json").then(data => {
+        console.log(data)
+    })
 }
 
 // FUNCTION #3 of 4
 function optionChanged(UID) {
+    console.log(UID);
     buildCharts(UID);
     populateDemoInfo(UID);
 }
