@@ -1,10 +1,5 @@
 // FUNCTION #1 of 4
 function buildCharts(UID) {
-
-    var barChart = d3.select("#bar");
-    var bubbleChart = d3.select("#bubble");
-    var guageChart = d3.select("#guage");
-
     d3.json("samples.json").then(data => {
         console.log(data)
     })
