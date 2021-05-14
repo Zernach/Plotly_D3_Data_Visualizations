@@ -3,15 +3,22 @@ function buildCharts(patientID) {
     d3.json("samples.json").then(data => {
         console.log(data)
     })
+
+    // ADD APPROXIMATELY 50 LINES OF CODE
+
+    // Plotly.newPlot("barDiv", barData, barLayout)
+    // Plotly.newPlot("bubbleDiv", bubbleData, bubbleLayout)
+    // Plotly.newPlot("gaugeDiv", guageData, bubbleLayout)
 };
 
 // FUNCTION #2 of 4
-function populateDemoInfo(patientID) {
+function populateDemographicInfo(patientID) {
 
     var demographicInfoBox = d3.select("#sample-metadata");
 
     d3.json("samples.json").then(data => {
         console.log(data)
+        // ADD APPROXIMATELY 3-6 LINE OF CODE
     })
 }
 
@@ -19,11 +26,11 @@ function populateDemoInfo(patientID) {
 function optionChanged(patientID) {
     console.log(patientID);
     buildCharts(patientID);
-    populateDemoInfo(patientID);
+    populateDemographicInfo(patientID);
 }
 
 // FUNCTION #4 of 4
-function initDashboard() {
+function initializeDashboard() {
     var dropdown = d3.select("#selDataset")
     d3.json("samples.json").then(data => {
         var patientIDs = data.names;
@@ -35,4 +42,4 @@ function initDashboard() {
     });
 };
 
-initDashboard();
+initializeDashboard();
