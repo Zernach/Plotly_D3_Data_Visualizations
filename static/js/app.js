@@ -1,16 +1,16 @@
 // FUNCTION #1 of 4
-function buildCharts(patientID) {
+function buildCharts(selectedPatientID) {
     d3.json("samples.json").then(data => {
         console.log(data)
         // ADD APPROXIMATELY 50 LINES OF CODE
         // Plotly.newPlot("barDiv", barData, barLayout)
         // Plotly.newPlot("bubbleDiv", bubbleData, bubbleLayout)
-        // Plotly.newPlot("gaugeDiv", guageData, bubbleLayout)
+        // Plotly.newPlot("gaugeDiv", gaugeData, gaugeLayout)
     })
 };
 
 // FUNCTION #2 of 4
-function populateDemographicInfo(patientID) {
+function populateDemographicInfo(selectedPatientID) {
 
     var demographicInfoBox = d3.select("#sample-metadata");
 
@@ -21,10 +21,10 @@ function populateDemographicInfo(patientID) {
 }
 
 // FUNCTION #3 of 4
-function optionChanged(patientID) {
-    console.log(patientID);
-    buildCharts(patientID);
-    populateDemographicInfo(patientID);
+function optionChanged(selectedPatientID) {
+    console.log(selectedPatientID);
+    buildCharts(selectedPatientID);
+    populateDemographicInfo(selectedPatientID);
 }
 
 // FUNCTION #4 of 4
@@ -36,7 +36,7 @@ function initializeChartsAndDemoInfo() {
             dropdown.append("option").text(patientID).property("value", patientID)
         })
         buildCharts(patientIDs[0]);
-        populateDemoInfo(patientIDs[0]);
+        populateDemographicInfo(patientIDs[0]);
     });
 };
 
