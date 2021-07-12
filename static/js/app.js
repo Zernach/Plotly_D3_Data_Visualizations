@@ -39,8 +39,10 @@ function populateDropdown() {
 // FUNCTION #5 of 5
 function buildWebsiteOnStartup() {
     populateDropdown();
-    buildCharts(patientIDs[0]);
-    populateDemographicInfo(patientIDs[0]);
+    d3.json("samples.json").then(data => {
+        buildCharts(data.names[0]);
+        populateDemographicInfo(data.names[0]);
+    })
 };
 
 buildWebsiteOnStartup();
